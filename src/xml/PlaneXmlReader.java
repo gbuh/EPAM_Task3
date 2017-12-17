@@ -50,7 +50,9 @@ public class PlaneXmlReader {
                         plane.setChars(chars);
                     } else if ("ammunition".equals(tagName)) {
                         ammunition = new Ammunition();
-                        ammunition.setRockets(Byte.parseByte(reader.getAttributeValue(null, "rockets")));
+                        if (reader.getAttributeCount() != 0) {
+                            ammunition.setRockets(Byte.parseByte(reader.getAttributeValue(null, "rockets")));
+                        }
                         ammunition.setValue(Boolean.parseBoolean(reader.getElementText()));
                         chars.setAmmunition(ammunition);
                         plane.setChars(chars);

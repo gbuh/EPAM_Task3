@@ -33,6 +33,8 @@ public class Ammunition {
 
     @Override
     public String toString() {
-        return value + " " + rockets + " rockets";
+        if (value) {
+            return value + " " + rockets + " rockets";
+        } else return value + "";
     }
 }

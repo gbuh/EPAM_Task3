@@ -16,8 +16,8 @@ public class Main {
         if(validator.validate()) {
             PlaneXmlReader reader = new PlaneXmlReader();
             List<Plane> planes = reader.read(fileName);
+            Collections.sort(planes, new PlaneModelComparator());
             for(Plane plane : planes) {
-//                Collections.sort(planes, new PlaneModelComparator());
                 System.out.println(plane);
                 System.out.println();
             }
