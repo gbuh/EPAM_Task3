@@ -1,5 +1,11 @@
 package domain;
 
+/**
+ * This class describes Parameters of the plane
+ * 
+ * @version 1.2 17 Dec 2017
+ * @author  Igor Lipko
+ */
 public class Parameters {
     private float length;
     private float width;

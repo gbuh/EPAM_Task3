@@ -1,4 +1,5 @@
 package xml;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -12,6 +13,12 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
+/**
+ * This class validates structure the XML-file for an XSD-schema
+ * 
+ * @version 1.2 17 Dec 2017
+ * @author  Igor Lipko
+ */
 public class PlaneXmlValidator extends DefaultHandler {
     public static final String SCHEMA_FILE_NAME = "./XMLPlane/PlaneCatalogue.xsd";
 

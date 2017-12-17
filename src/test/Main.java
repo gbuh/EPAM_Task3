@@ -9,6 +9,14 @@ import comparator.PlaneModelComparator;
 import domain.Plane;
 import xml.*;
 
+/**
+ * This program reads text from the XML-file, validate for an XSD-schema,
+ * initializes the collection of objects with information from the XML-file
+ * and sorts the objects of the plane according to the model
+ * 
+ * @version 1.2 17 Dec 2017
+ * @author  Igor Lipko
+ */
 public class Main {
     public static void main(String[] args) throws IOException {
         String fileName = "./XMLPlane/PlaneCatalogue.xml";

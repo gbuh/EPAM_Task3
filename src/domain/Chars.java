@@ -1,5 +1,11 @@
 package domain;
 
+/**
+ * This class describes Characteristics of the plane
+ * 
+ * @version 1.2 17 Dec 2017
+ * @author  Igor Lipko
+ */
 public class Chars {
     private String type;
     private byte places;

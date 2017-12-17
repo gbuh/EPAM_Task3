@@ -12,6 +12,13 @@ import javax.xml.stream.XMLStreamReader;
 
 import domain.*;
 
+/**
+ * This class reads text from the XML-file and initializes the
+ * collection of objects with information from the XML-file
+ * 
+ * @version 1.2 17 Dec 2017
+ * @author  Igor Lipko
+ */
 public class PlaneXmlReader {
     public List<Plane> read(String fileName) throws FileNotFoundException {
         XMLStreamReader reader = null;
