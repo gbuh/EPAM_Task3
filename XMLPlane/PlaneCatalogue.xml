@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<planes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns="http://www.example.org/planes"
+		xsi:schemaLocation="http://www.example.org/planes PlaneCatalogue.xsd">
+	
+	<plane id="plane1">
+		<model>CF5D</model>
+		<origin>USA</origin>
+		<price currency="Thaler">350000</price>
+		<chars>
+			<type>Support Aircraft</type>
+			<places>2</places>
+			<ammunition rockets="4">true</ammunition>
+			<radar>true</radar>
+		</chars>
+		<parameters measure="meters">
+			<length>15.65</length>
+			<width>10.11</width>
+			<height>3.09</height>
+		</parameters>
+	</plane>
+	<plane id="plane2">
+		<model>AERO L-39C ALBATROS</model>
+		<origin>Canada</origin>
+		<price currency="Thaler">410000</price>
+		<chars>
+			<type>Scout</type>
+			<places>1</places>
+			<ammunition rockets="0">false</ammunition>
+			<radar>false</radar>
+		</chars>
+		<parameters measure="meters">
+			<length>14</length>
+			<width>9.5</width>
+			<height>3.16</height>
+		</parameters>
+	</plane>
+		<plane id="plane3">
+		<model>CY25</model>
+		<origin>RUSSIA</origin>
+		<price currency="Thaler">500000</price>
+		<chars>
+			<type>Fighter</type>
+			<places>1</places>
+			<ammunition rockets="10">true</ammunition>
+			<radar>true</radar>
+		</chars>
+		<parameters measure="meters">
+			<length>17.20</length>
+			<width>10.50</width>
+			<height>3.30</height>
+		</parameters>
+	</plane>
+</planes>

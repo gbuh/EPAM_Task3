@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://www.example.org/planes"
+		xmlns:tns="http://www.example.org/planes" elementFormDefault="qualified">
+
+	<element name="planes">
+		<complexType>
+			<sequence>
+				<element name="plane" type="tns:plane" maxOccurs="unbounded" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<complexType name="plane">
+		<sequence>
+			<element name="model" type="string" />
+			<element name="origin" type="string" />
+			<element name="price" type="tns:price" />
+			<element name="chars" type="tns:chars" />
+			<element name="parameters" type="tns:parameters" />
+		</sequence>
+		<attribute name="id" use="required">
+			<simpleType>
+				<restriction base="ID">
+					<pattern value="[a-zA-z0-9_]+" />
+				</restriction>
+			</simpleType>
+		</attribute>
+	</complexType>
+
+	<complexType name="price">
+		<simpleContent>
+			<extension base="positiveInteger">
+				<attribute name="currency" type="string" fixed="Thaler" />
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<complexType name="chars">
+		<sequence>
+			<element name="type" type="tns:type" minOccurs="0" />
+			<element name="places" type="tns:places" minOccurs="0" />
+			<element name="ammunition" type="tns:ammunition" minOccurs="0" />
+			<element name="radar" type="boolean" minOccurs="0" />
+		</sequence>
+	</complexType>
+
+	<simpleType name="type">
+		<restriction base="string">
+			<enumeration value="Support Aircraft" />
+			<enumeration value="Escort Aircraft" />
+			<enumeration value="Fighter" />
+			<enumeration value="Interceptor" />
+			<enumeration value="Scout" />
+		</restriction>
+	</simpleType>
+
+	<simpleType name="places">
+		<restriction base="byte">
+			<minInclusive value="1" />
+			<maxInclusive value="2" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="ammunition">
+		<simpleContent>
+			<extension base="boolean">
+				<attribute name="rockets" type="tns:rockets" use="optional" />
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<simpleType name="rockets">
+		<restriction base="byte">
+			<minInclusive value="0" />
+			<maxInclusive value="10" />
+		</restriction>
+	</simpleType>
+
+	<complexType name="parameters">
+		<sequence>
+			<element name="length" type="float" />
+			<element name="width" type="float" />
+			<element name="height" type="float" />
+		</sequence>
+		<attribute name="measure" type="string" default="meters" />
+	</complexType>
+</schema>
